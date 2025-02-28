@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b74260067185479dad16b985894c803e" Name="Diagram1">
+        <EntityTypeShape EntityType="kindergartenModel.Child" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="kindergartenModel.Group" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="kindergartenModel.MedicalCard" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="kindergartenModel.Parent" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="kindergartenModel.Roles" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kindergartenModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="kindergartenModel.Teacher" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="kindergartenModel.Users" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="kindergartenModel.Vaccination" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="kindergartenModel.Visit" Width="1.5" PointX="7.5" PointY="1.875" IsExpanded="true" />
+        <AssociationConnector Association="kindergartenModel.FK_Child_Group" ManuallyRouted="false" />
+        <AssociationConnector Association="kindergartenModel.FK_Child_MedicalCard" ManuallyRouted="false" />
+        <AssociationConnector Association="kindergartenModel.FK_Child_Parent" ManuallyRouted="false" />
+        <AssociationConnector Association="kindergartenModel.FK_Visit_Child" ManuallyRouted="false" />
+        <AssociationConnector Association="kindergartenModel.FK_Group_Teacher" ManuallyRouted="false" />
+        <AssociationConnector Association="kindergartenModel.FK_MedicalCard_Vaccination" ManuallyRouted="false" />
+        <AssociationConnector Association="kindergartenModel.FK_Users_Teacher" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
