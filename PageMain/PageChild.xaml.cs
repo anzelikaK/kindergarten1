@@ -34,8 +34,7 @@ namespace kindergarten.PageMain
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
-            AppFrame.FrameMain.Navigate(new PageEditChild(null));
-
+            AppFrame.FrameMain.Navigate(new PageEditChild((sender as Button).DataContext as Child));
         }
 
         private void Page_IsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -46,28 +45,26 @@ namespace kindergarten.PageMain
         private void btnDel_Click(object sender, RoutedEventArgs e)
         {
             {
-                // Проверяем, выбран ли элемент в DataGrid
+                
                 if (DtGridChild.SelectedItem == null)
                 {
                     MessageBox.Show("Выберите ребенка для удаления!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
 
-                // Запрашиваем подтверждение
+                
                 var result = MessageBox.Show("Удалить выбранного ребенка?", "Подтверждение",
                                             MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result != MessageBoxResult.Yes) return;
 
                 try
                 {
-                    // Получаем выбранный объект Child
+                    
                     Child selectedChild = DtGridChild.SelectedItem as Child;
 
-                    // Удаляем из базы данных
                     kindergartenEntities.GetContext().Child.Remove(selectedChild);
                     kindergartenEntities.GetContext().SaveChanges();
 
-                    // Обновляем DataGrid
                     DtGridChild.ItemsSource = kindergartenEntities.GetContext().Child.ToList();
                     MessageBox.Show("Ребенок удален!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
@@ -80,7 +77,7 @@ namespace kindergarten.PageMain
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            AppFrame.FrameMain.Navigate(new PageAddChild());
+            AppFrame.FrameMain.Navigate(new PageAddChild(null)); ;
         }
 
         private void BtnCard_Click(object sender, RoutedEventArgs e)

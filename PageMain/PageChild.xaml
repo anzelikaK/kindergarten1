@@ -17,17 +17,17 @@
                 <DataGridTextColumn Header="Имя" Binding="{Binding NameChild}" Width="25*"/>
                 <DataGridTextColumn Header="Отечество" Binding="{Binding Patronymic}" Width="25*"/>
                 <DataGridTextColumn Header="Дата рождения" Binding="{Binding DateOfBirth}" Width="25*"/>
-                <DataGridTextColumn Header="Пол" Binding="{Binding Gender}" Width="25*"/>
-                <DataGridTextColumn Header="Родитель" Binding="{Binding idParent}" Width="25*"/>
-                <DataGridTextColumn Header="Группа" Binding="{Binding idGroup}" Width="25*"/>
-                <DataGridCheckBoxColumn Header="Семья полная/неполная" Binding="{Binding TheFamilyIsNotComplete}" Width="25*"/>
-                <DataGridTextColumn Header="Медицинская карта" Binding="{Binding idMedicalCard}" Width="25*"/>
+                <DataGridTextColumn Header="Пол" Binding="{Binding Gender}" Width="10*"/>
+                <DataGridTextColumn Header="Родитель" Binding="{Binding idParent}" Width="10*"/>
+                <DataGridTextColumn Header="Группа" Binding="{Binding idGroup}" Width="10*"/>
+                <DataGridCheckBoxColumn Header="Семья полная/неполная" Binding="{Binding TheFamilyIsNotComplete}" Width="10*"/>
+                <DataGridTextColumn Header="Медицинская карта" Binding="{Binding idMedicalCard}" Width="10*"/>
                 <DataGridTemplateColumn Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Content="Редактировать" Name="BtnEdit" Click="BtnEdit_Click" Width="50"/>
-                                <Button Content="Медицинская карта" Name="BtnCard" Click="BtnCard_Click" Width="50"/>
+                                <Button Content="Редактировать" Name="BtnEdit" Click="BtnEdit_Click" Width="80"/>
+                                <Button Content="Медицинская карта" Name="BtnCard" Click="BtnCard_Click" Width="80"/>
                             </StackPanel>
                             
                         </DataTemplate>

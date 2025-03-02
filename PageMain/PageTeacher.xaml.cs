@@ -16,9 +16,7 @@ using System.Windows.Shapes;
 
 namespace kindergarten.PageMain
 {
-    /// <summary>
-    /// Логика взаимодействия для PageTeacher.xaml
-    /// </summary>
+    
     public partial class PageTeacher : Page
     {
         public PageTeacher()
@@ -34,28 +32,26 @@ namespace kindergarten.PageMain
 
         private void btnDel_Click(object sender, RoutedEventArgs e)
         {
-            // Проверяем, выбран ли элемент в DataGrid
+            
             if (DtGridTeacher.SelectedItem == null)
             {
                 MessageBox.Show("Выберите учителя для удаления!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
-            // Запрашиваем подтверждение
             var result = MessageBox.Show("Удалить выбранного воспитателя?", "Подтверждение",
                                         MessageBoxButton.YesNo, MessageBoxImage.Question);
             if (result != MessageBoxResult.Yes) return;
 
             try
             {
-                // Получаем выбранный объект Child
                 Teacher selectedTeacher = DtGridTeacher.SelectedItem as Teacher;
 
-                // Удаляем из базы данных
+                
                 kindergartenEntities.GetContext().Teacher.Remove(selectedTeacher);
                 kindergartenEntities.GetContext().SaveChanges();
 
-                // Обновляем DataGrid
+                
                 DtGridTeacher.ItemsSource = kindergartenEntities.GetContext().Teacher.ToList();
                 MessageBox.Show("Воспитатель удален!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
             }

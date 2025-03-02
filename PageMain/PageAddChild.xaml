@@ -39,7 +39,7 @@
         <TextBox Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Margin="25,0,0,0" Style="{StaticResource TextBox}" Text="{Binding NameChild}"/>
         <TextBox Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Margin="25,0,0,0" Style="{StaticResource TextBox}" Text="{Binding Patronymic}"/>
         <DatePicker Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Margin="25,0,0,0" SelectedDate="{Binding DateOfBirth}"  />
-        <ComboBox x:Name="GenderComboBox" Grid.Row="4" Grid.Column="1" Margin="25,0,0,0" HorizontalAlignment="Left" SelectedItem="{Binding Gender}" Style="{StaticResource ComboBox}"/>
+        <TextBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" Margin="25,0,0,0" Style="{StaticResource TextBox}" Text="{Binding Gender}"/>
         <ComboBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" Margin="25,0,0,0" x:Name="cmbParent" DisplayMemberPath="Surname" SelectedValuePath="idParent" SelectedValue="{Binding idParent}" Style="{StaticResource ComboBox}"/>
         <ComboBox Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" Margin="25,0,0,0" x:Name="cmbGroup" DisplayMemberPath="GroupName" SelectedValuePath="idGroup" SelectedValue="{Binding idGroup}" Style="{StaticResource ComboBox}"/>
         <CheckBox Grid.Row="7" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding TheFamilyIsNotComplete}"/>

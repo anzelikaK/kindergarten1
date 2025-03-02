@@ -22,10 +22,17 @@ namespace kindergarten.PageMain
     public partial class PageAddParent : Page
     {
         private Parent _currentParent = new Parent();
+        private Parent parent;
+
         public PageAddParent()
         {
             InitializeComponent();
             DataContext = _currentParent;
+        }
+
+        public PageAddParent(Parent parent)
+        {
+            this.parent = parent;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)

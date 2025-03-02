@@ -25,38 +25,35 @@ namespace kindergarten.PageMain
         {
             InitializeComponent();
             DtGridParent.ItemsSource = kindergartenEntities.GetContext().Parent.ToList();
+
         }
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void btnDel_Click(object sender, RoutedEventArgs e)
         {
             {
-                // Проверяем, выбран ли элемент в DataGrid
+                
                 if (DtGridParent.SelectedItem == null)
                 {
                     MessageBox.Show("Выберите родителя для удаления!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
 
-                // Запрашиваем подтверждение
                 var result = MessageBox.Show("Удалить выбранного родителя?", "Подтверждение",
                                             MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result != MessageBoxResult.Yes) return;
 
                 try
                 {
-                    // Получаем выбранный объект Child
                     Parent selectedParent = DtGridParent.SelectedItem as Parent;
 
-                    // Удаляем из базы данных
                     kindergartenEntities.GetContext().Parent.Remove(selectedParent);
                     kindergartenEntities.GetContext().SaveChanges();
 
-                    // Обновляем DataGrid
                     DtGridParent.ItemsSource = kindergartenEntities.GetContext().Child.ToList();
                     MessageBox.Show("Родитель удален!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
@@ -70,6 +67,11 @@ namespace kindergarten.PageMain
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             AppFrame.FrameMain.Navigate(new PageAddParent());
+        }
+
+        private void Page_IsEnabledChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            
         }
     }
 }

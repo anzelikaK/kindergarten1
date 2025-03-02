@@ -16,9 +16,7 @@ using System.Windows.Shapes;
 
 namespace kindergarten.PageMain
 {
-    /// <summary>
-    /// Логика взаимодействия для PageAddMedicalCard.xaml
-    /// </summary>
+   
     public partial class PageAddMedicalCard : Page
     {
         private MedicalCard _currentMedicalCard = new MedicalCard();

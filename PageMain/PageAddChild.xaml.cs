@@ -19,12 +19,11 @@ namespace kindergarten.PageMain
             _currentChild = selectedChild; // Используем переданный объект
             DataContext = this;
             LoadComboBoxData();
-           
+
         }
         public PageAddChild()
         {
             InitializeComponent();
-            GenderComboBox.ItemsSource = Genders;
             _currentChild = new Child();
             DataContext = this;
             LoadComboBoxData();

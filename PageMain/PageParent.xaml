@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:kindergarten.PageMain"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PageParent">
+      Title="PageParent" IsEnabledChanged="Page_IsEnabledChanged" >
 
     <Grid>
 

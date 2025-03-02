@@ -29,10 +29,9 @@ namespace kindergarten.PageMain
                 _currentChild = selectedChild;
 
             DataContext = _currentChild;
-            cmbGroup.ItemsSource = kindergartenEntities.GetContext().Child.ToList();
-            cmbParent.ItemsSource = kindergartenEntities.GetContext().Child.ToList();
-            cmbMedicalCard.ItemsSource = kindergartenEntities.GetContext().Child.ToList();
-
+            cmbGroup.ItemsSource = kindergartenEntities.GetContext().Group.ToList();
+            cmbParent.ItemsSource = kindergartenEntities.GetContext().Parent.ToList();
+            cmbMedicalCard.ItemsSource = kindergartenEntities.GetContext().MedicalCard.ToList();
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
@@ -58,20 +57,22 @@ namespace kindergarten.PageMain
 
             if (errors.Length > 0)
             {
-                MessageBox.Show(errors.ToString());
+                MessageBox.Show(errors.ToString(), "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
+
             if (_currentChild.idСhild == 0)
                 kindergartenEntities.GetContext().Child.Add(_currentChild);
 
             try
             {
                 kindergartenEntities.GetContext().SaveChanges();
-                MessageBox.Show("Информация сохранена");
+                MessageBox.Show("Данные сохранены!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                AppFrame.FrameMain.GoBack();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message.ToString());
+                MessageBox.Show($"Ошибка при сохранении: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

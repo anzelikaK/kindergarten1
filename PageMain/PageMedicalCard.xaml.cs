@@ -35,28 +35,24 @@ namespace kindergarten.PageMain
         private void btnDel_Click(object sender, RoutedEventArgs e)
         {
             {
-                // Проверяем, выбран ли элемент в DataGrid
                 if (DtGridMedicalCard.SelectedItem == null)
                 {
                     MessageBox.Show("Выберите медицискую карту для удаления!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                     return;
                 }
 
-                // Запрашиваем подтверждение
                 var result = MessageBox.Show("Удалить выбраную медицинскую карту?", "Подтверждение",
                                             MessageBoxButton.YesNo, MessageBoxImage.Question);
                 if (result != MessageBoxResult.Yes) return;
 
                 try
                 {
-                    // Получаем выбранный объект Child
                     MedicalCard selectedMedicalCard = DtGridMedicalCard.SelectedItem as MedicalCard;
 
-                    // Удаляем из базы данных
                     kindergartenEntities.GetContext().MedicalCard.Remove(selectedMedicalCard);
                     kindergartenEntities.GetContext().SaveChanges();
 
-                    // Обновляем DataGrid
+                    
                     DtGridMedicalCard.ItemsSource = kindergartenEntities.GetContext().MedicalCard.ToList();
                     MessageBox.Show("Медицинская карта удален!", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
